@@ -1,0 +1,19 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+repositories {
+  mavenCentral ()
+
+  mavenRepo urls: new File("${System.getProperty('user.home')}/.m2/repository").toURL().toString()
+  mavenRepo urls: 'http://groovypp.artifactoryonline.com/groovypp/libs-releases-local/'
+
+  mavenRepo urls: 'http://snapshots.repository.codehaus.org/'
+}
+
+dependencies {
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: "1.7.10"
+
+    compile group: 'org.mbte.groovypp', name: 'groovypp', version: "0.4.230_1.7.10"
+    compile group: 'org.codehaus.jsr166-mirror', name: 'jsr166y', version: "0.4.40-SNAPSHOT"
+}
