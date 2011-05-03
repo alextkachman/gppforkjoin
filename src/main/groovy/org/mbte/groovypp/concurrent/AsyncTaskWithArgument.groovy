@@ -8,19 +8,19 @@ package org.mbte.groovypp.concurrent
         clone[argument: null]
     }
 
-    protected final groovy.lang.Function0<V> split() {
+    protected final Function0<V> split() {
         doSplit(argument)
     }
 
     protected final AsyncFjTaskWithArg<V,A> fork(A arg) {
-        submit( arg, clone())
+        submitTask( arg, clone())
     }
 
     protected final V invoke(A arg) {
         invoke(arg, clone())
     }
 
-    abstract groovy.lang.Function0<V> doSplit(A argument)
+    abstract Function0<V> doSplit(A argument)
 
     String toString () {
         "${this.class.simpleName}($argument) ${parentTask ? '<- ' + parentTask : ''}"

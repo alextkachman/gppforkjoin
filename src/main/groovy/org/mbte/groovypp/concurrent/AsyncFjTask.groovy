@@ -53,12 +53,12 @@ import jsr166y.Phaser
 
     protected abstract groovy.lang.Function0<V> split()
 
-    protected final <R> AsyncFjTask<R> submit(AsyncFjTask<R> task) {
+    protected final <R> AsyncFjTask<R> submitTask(AsyncFjTask<R> task) {
         phaser.register()
         pool.submit task[parentTask:this]
     }
 
-    protected final <R,A> AsyncFjTaskWithArg<R,A> submit(A arg, AsyncFjTaskWithArg<R,A> task) {
+    protected final <R,A> AsyncFjTaskWithArg<R,A> submitTask(A arg, AsyncFjTaskWithArg<R,A> task) {
         phaser.register()
         pool.submit task[parentTask:this, argument:arg]
     }

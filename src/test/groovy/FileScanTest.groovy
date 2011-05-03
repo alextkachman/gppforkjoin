@@ -1,8 +1,6 @@
 import jsr166y.ForkJoinPool
 import org.mbte.groovypp.concurrent.ForkJoinCategory
 import org.mbte.groovypp.concurrent.AsyncFjTask
-import groovypp.concurrent.AtomicLongMap
-import groovypp.concurrent.AtomicIntegerMap
 
 @Typed class FileScanTest extends GroovyShellTestCase implements ForkJoinCategory {
     void testScan () {
