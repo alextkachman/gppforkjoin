@@ -3,10 +3,6 @@ package org.mbte.groovypp.concurrent
 import jsr166y.ForkJoinPool
 
 @Trait abstract class ForkJoinCategory {
-    static <V,E> List<V> map(ForkJoinPool pool, Iterable<E> iter, AsyncFjTaskWithArg<V,E> task) {
-        pool.map(iter.iterator(), task)
-    }
-
     static <V,E> List<V> map(ForkJoinPool pool, Iterator<E> iter, AsyncFjTaskWithArg<V,E> task) {
         pool.invokeTask { ->
             List<AsyncFjTask> tasks = []
@@ -20,6 +16,10 @@ import jsr166y.ForkJoinPool
                 res
             }
         }
+    }
+
+    static <V,E> List<V> map(ForkJoinPool pool, Iterable<E> iter, AsyncFjTaskWithArg<V,E> task) {
+        pool.map(iter.iterator(), task)
     }
 
     static <V,A> V invokeTask(ForkJoinPool pool, A argument, AsyncFjTaskWithArg<V, A> task) {
