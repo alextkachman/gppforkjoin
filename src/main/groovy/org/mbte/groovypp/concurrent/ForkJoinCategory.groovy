@@ -68,9 +68,4 @@ import jsr166y.ForkJoinPool
     static <V,E> AsyncFjTask<List<V>> submitMap(ForkJoinPool pool, Iterable<E> iterable, AsyncFjTaskWithArg<V,E> task) {
         pool.submitMap(iterable.iterator(), task)
     }
-
-    static <V,E> AsyncFjTaskWithArg<List<V>,Iterator<E>> map(AsyncFjTaskWithArg<V,E> task) {
-        return { Iterator<E> iterator ->
-        }
-    }
 }

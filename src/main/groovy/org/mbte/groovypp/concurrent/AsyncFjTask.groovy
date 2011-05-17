@@ -45,7 +45,6 @@ import jsr166y.Phaser
             phaser.terminated
         }
         catch(Throwable e) {
-            e.printStackTrace()
             completeExceptionally(e)
             return true
         }

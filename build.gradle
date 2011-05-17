@@ -14,6 +14,6 @@ repositories {
 dependencies {
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: "1.7.10"
 
-    compile group: 'org.mbte.groovypp', name: 'groovypp', version: "0.4.230_1.7.10"
-    compile group: 'org.codehaus.jsr166-mirror', name: 'jsr166y', version: "0.4.40-SNAPSHOT"
+    compile group: 'org.mbte.groovypp', name: 'groovypp', version: "0.4.242_1.7.10"
+    compile group: 'org.codehaus.jsr166-mirror', name: 'jsr166y', version: "1.7.0"
 }
