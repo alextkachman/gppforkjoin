@@ -27,7 +27,7 @@ import java.util.concurrent.Executors
 class PermutationsTest extends GroovyTestCase {
     void testPermutations() {
         ForkJoinPool fjPool = []
-        fjPool.invokeTask((0..8) as LinkedHashSet) { set ->
+        fjPool.invokeTask((0..5) as LinkedHashSet) { set ->
             if(set.size() == 1) {
                 complete([set])
             }
@@ -59,7 +59,7 @@ class PermutationsTest extends GroovyTestCase {
 
     void testPermutationsNoStoring() {
         ForkJoinPool fjPool = []
-        fjPool.invokeTask([(0..50) as LinkedHashSet, [] as LinkedHashSet] as Pair) { set ->
+        fjPool.invokeTask([(0..5) as LinkedHashSet, [] as LinkedHashSet] as Pair) { set ->
             if(set.first.size() == 0) {
                 println set.second
             }
